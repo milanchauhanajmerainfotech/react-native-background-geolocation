@@ -1,5 +1,5 @@
 {
-  "name": "@Ajmera-Infotech-Comman/react-native-background-geolocation",
+  "name": "@ajmera-infotech-commons/react-native-background-geolocation",
   "version": "0.6.5",
   "description": "optimized background location tracking",
   "main": "./index.js",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/Ajmera-Infotech-Commons/react-native-background-geolocation.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://npm.pkg.github.com/@Ajmera-Infotech-Commons"
   },
   "keywords": [
     "gps",
