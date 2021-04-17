@@ -17,7 +17,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: "@Ajmera-Infotech-Commons"
       - name: "linkink package.json"
-        run: ln -s packages/diagnostic-info/package.json package.json
+        run: ln -s package.json package.json
       - name: "Automated Version Bump"
         id: version-bump
         uses: "phips28/gh-action-bump-version@master"
