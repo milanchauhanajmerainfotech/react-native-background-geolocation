@@ -1,0 +1,36 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  package-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout source code"
+        uses: "actions/checkout@v2"
+        with:
+          ref: ${{ github.ref }}
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://npm.pkg.github.com/
+          scope: "@Ajmera-Infotech-Commons"
+      - name: "linkink package.json"
+        run: ln -s packages/diagnostic-info/package.json package.json
+      - name: "Automated Version Bump"
+        id: version-bump
+        uses: "phips28/gh-action-bump-version@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          minor-wording: "Automatic-bump-minor"
+          major-wording: "Automatic-bump-major"
+      - name: "NPM publishing"
+        run: |
+          cd packages/diagnostic-info
+          npm install
+          npm run build
+          npm publish --tag alpha
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
