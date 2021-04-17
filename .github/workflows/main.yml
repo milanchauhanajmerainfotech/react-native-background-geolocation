@@ -26,9 +26,7 @@ jobs:
           major-wording: "Automatic-bump-major"
       - name: "NPM publishing"
         run: |
-          cd packages/diagnostic-info
           npm install
-          npm run build
           npm publish --tag alpha
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
