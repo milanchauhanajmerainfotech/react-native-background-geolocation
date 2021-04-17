@@ -1,12 +1,12 @@
 {
   "name": "@ajmera-infotech-commons/react-native-background-geolocation",
-  "version": "0.6.5",
+  "version": "0.6.7",
   "description": "optimized background location tracking",
   "main": "./index.js",
   "types": "./index.d.ts",
   "scripts": {
-    "link": "@milanchauhanajmerainfotech/react-native-background-geolocation/scripts/postlink.js",
-    "unlink": "@milanchauhanajmerainfotech/react-native-background-geolocation/scripts/postunlink.js",
+    "link": "@ajmera-infotech-commons/react-native-background-geolocation/scripts/postlink.js",
+    "unlink": "@ajmera-infotech-commons/react-native-background-geolocation/scripts/postunlink.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,9 +32,9 @@
   "author": "Marian Hello",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/milanchauhanajmerainfotech/react-native-background-geolocation/issues"
+    "url": "https://github.com/Ajmera-Infotech-Commons/react-native-background-geolocation/issues"
   },
-  "homepage": "https://github.com/milanchauhanajmerainfotech/react-native-background-geolocation#readme",
+  "homepage": "https://github.com/Ajmera-Infotech-Commons/react-native-background-geolocation#readme",
   "dependencies": {
     "plist": "^3.0.1"
   },

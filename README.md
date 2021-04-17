@@ -1,4 +1,4 @@
-# @milanchauhanajmerainfotech/react-native-background-geolocation
+# @ajmera-infotech-commons/react-native-background-geolocation
 
 [![CircleCI](https://circleci.com/gh/mauron85/react-native-background-geolocation/tree/master.svg?style=shield)](https://circleci.com/gh/mauron85/react-native-background-geolocation/tree/master)
 [![issuehunt-shield-v1](issuehunt-shield-v1.svg)](https://issuehunt.io/r/mauron85/react-native-background-geolocation/)
@@ -104,7 +104,7 @@ The repository [react-native-background-geolocation-example](https://github.com/
 ```javascript
 import React, { Component } from "react";
 import { Alert } from "react-native";
-import BackgroundGeolocation from "@milanchauhanajmerainfotech/react-native-background-geolocation";
+import BackgroundGeolocation from "@ajmera-infotech-commons/react-native-background-geolocation";
 
 class BgTracking extends Component {
   componentDidMount() {
