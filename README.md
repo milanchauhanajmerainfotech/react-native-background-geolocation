@@ -3,16 +3,6 @@
 [![CircleCI](https://circleci.com/gh/mauron85/react-native-background-geolocation/tree/master.svg?style=shield)](https://circleci.com/gh/mauron85/react-native-background-geolocation/tree/master)
 [![issuehunt-shield-v1](issuehunt-shield-v1.svg)](https://issuehunt.io/r/mauron85/react-native-background-geolocation/)
 
-## We're moving
-
-Npm package is now [@mauron85/react-native-background-geolocation](https://www.npmjs.com/package/@mauron85/react-native-background-geolocation)!
-
-# Donation
-
-Please support my work and continued development with your donation.
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6GW8FPTE6TV5J)
-
 ## Submitting issues
 
 All new issues should follow instructions in [ISSUE_TEMPLATE.md](https://raw.githubusercontent.com/mauron85/react-native-background-geolocation/master/ISSUE_TEMPLATE.md).
@@ -118,20 +108,11 @@ class BgTracking extends Component {
       startOnBoot: false,
       stopOnTerminate: true,
       locationProvider: BackgroundGeolocation.ACTIVITY_PROVIDER,
+      startForeground: true, // Will allow service to run in background
       interval: 10000,
       fastestInterval: 5000,
       activitiesInterval: 10000,
       stopOnStillActivity: false,
-      url: "http://192.168.81.15:3000/location",
-      httpHeaders: {
-        "X-FOO": "bar",
-      },
-      // customize post properties
-      postTemplate: {
-        lat: "@latitude",
-        lon: "@longitude",
-        foo: "bar", // you can also add your own properties
-      },
     });
 
     BackgroundGeolocation.on("location", (location) => {
@@ -251,7 +232,7 @@ export default BgTracking;
 Add the package to your project
 
 ```
-yarn add @mauron85/react-native-background-geolocation
+yarn add @ajmera-infotech-commons/react-native-background-geolocation@0.6.10
 ```
 
 ### Automatic setup
@@ -260,7 +241,7 @@ Since version 0.60 React Native does linking of modules [automatically](https://
 As plugin depends on additional 'common' module, it is required to link it with:
 
 ```
-node ./node_modules/@mauron85/react-native-background-geolocation/scripts/postlink.js
+node ./node_modules/@ajmera-infotech-commons/react-native-background-geolocation/scripts/postlink.js
 ```
 
 ### Manual setup
@@ -271,10 +252,10 @@ In `android/settings.gradle`
 
 ```gradle
 ...
-include ':@mauron85_react-native-background-geolocation-common'
-project(':@mauron85_react-native-background-geolocation-common').projectDir = new File(rootProject.projectDir, '../node_modules/@mauron85/react-native-background-geolocation/android/common')
-include ':@mauron85_react-native-background-geolocation'
-project(':@mauron85_react-native-background-geolocation').projectDir = new File(rootProject.projectDir, '../node_modules/@mauron85/react-native-background-geolocation/android/lib')
+include ':@ajmera-infotech-commons_react-native-background-geolocation-common'
+project(':@ajmera-infotech-commons_react-native-background-geolocation-common').projectDir = new File(rootProject.projectDir, '../node_modules/@ajmera-infotech-commons/react-native-background-geolocation/android/common')
+include ':@ajmera-infotech-commons_react-native-background-geolocation'
+project(':@ajmera-infotech-commons_react-native-background-geolocation').projectDir = new File(rootProject.projectDir, '../node_modules/@ajmera-infotech-commons/react-native-background-geolocation/android/lib')
 ...
 ```
 
@@ -283,7 +264,7 @@ In `android/app/build.gradle`
 ```gradle
 dependencies {
     ...
-    compile project(':@mauron85_react-native-background-geolocation')
+    compile project(':@ajmera-infotech-commons_react-native-background-geolocation')
     ...
 }
 ```
@@ -303,7 +284,7 @@ public class MainApplication extends Application implements ReactApplication {
   protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new BackgroundGeolocationPackage() // <---- Add the Package
+          new BackgroundGeolocationPackage() // <---- Add the Package (Requires only if auto link package not worked)
       );
   }
   ...
@@ -313,7 +294,7 @@ public class MainApplication extends Application implements ReactApplication {
 #### iOS setup
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Add `./node_modules/@mauron85/react-native-background-geolocation/ios/RCTBackgroundGeolocation.xcodeproj`
+2. Add `./node_modules/@ajmera-infotech-commons/react-native-background-geolocation/ios/RCTBackgroundGeolocation.xcodeproj`
 3. In the XCode project navigator, select your project, select the `Build Phases` tab and in the `Link Binary With Libraries` section add **libRCTBackgroundGeolocation.a**
 4. Add `UIBackgroundModes` **location** to `Info.plist`
 5. Add `NSMotionUsageDescription` **App requires motion tracking** to `Info.plist` (required by ACTIVITY_PROVIDER)
