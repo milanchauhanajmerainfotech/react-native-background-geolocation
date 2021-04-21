@@ -1,6 +1,6 @@
 {
   "name": "@ajmera-infotech-commons/react-native-background-geolocation",
-  "version": "0.6.11",
+  "version": "0.6.12",
   "description": "optimized background location tracking",
   "main": "./index.js",
   "types": "./index.d.ts",
